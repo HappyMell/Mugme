@@ -1,0 +1,87 @@
+.background-video {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 0 60px;
+  height: 800px;
+  position: relative;
+  background-color: #fff;
+
+  .title {
+    position: relative;
+    top: auto;
+    bottom: 0;
+    z-index: 3;
+    font-family: "Source Sans Pro";
+    font-size: 7vw;
+    font-weight: 900;
+    color: #fff;
+    text-align: center;
+    letter-spacing: -0.055em;
+  }
+
+  .link-button {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    margin-top: 60px;
+    padding: 0 20px 0 45px;
+    height: 45px;
+    overflow: hidden;
+    position: relative;
+    z-index: 3;
+    border-radius: 25px;
+    border: 1px solid transparent;
+    background-color: transparent;
+    cursor: pointer;
+
+    &__wrapper {
+      display: flex;
+      align-items: center;
+      justify-content: flex-start;
+      padding: 0 7.5px;
+      // width: 30px;
+      height: 45px;
+      position: absolute;
+      left: 0;
+      background-color: #ff6464;
+      border-radius: 5025px;
+
+      .image-button {
+        margin-right: auto;
+        width: 30px;
+        height: auto;
+        max-width: 100%;
+      }
+    }
+
+    .button-text {
+      margin-left: 10px;
+      position: relative;
+      z-index: 2;
+      font-family: "Source Sans Pro";
+      font-size: 14px;
+      color: #fff;
+      letter-spacing: -0.05px;
+      text-transform: uppercase;
+    }
+  }
+
+  video {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    height: auto;
+    overflow: hidden;
+    position: absolute;
+    top: 0%;
+    bottom: 0%;
+    left: 0%;
+    right: 0%;
+    z-index: 2;
+    background: #fff;
+  }
+}
