@@ -103,7 +103,7 @@ class Directory extends React.Component {
         {
           id: 1,
           title: "Design your mug",
-          linkUrl: "design",
+          linkUrl: "special-product",
           videoUrl:
             "https://assets.website-files.com/5f355e6ddb2cd46fe581b3b4/5f355e6ddb2cd4cb5681b41f_ezgif-com-resize-transcode.mp4",
         },
@@ -146,27 +146,14 @@ class Directory extends React.Component {
     return (
       <div className="directory">
         <div className="grid-section">
-          {this.state.sections.map(
-            ({ title, id, backgroundColor, imageUrl }) => (
-              <CardHeroProduct
-                key={id}
-                title={title}
-                backgroundColor={backgroundColor}
-                imageUrl={imageUrl}
-              />
-            )
-          )}
+          {this.state.sections.map(({ id, ...otherSectionProps }) => (
+            <CardHeroProduct key={id} {...otherSectionProps} />
+          ))}
         </div>
         <div className="collection-grid">
           {this.state.homePageCollections.map(
-            ({ title, price, imageUrl, options, id }) => (
-              <HomepageCollectionList
-                key={id}
-                title={title}
-                price={price}
-                imageUrl={imageUrl}
-                options={options}
-              />
+            ({ id, ...otherCollectionProps }) => (
+              <HomepageCollectionList key={id} {...otherCollectionProps} />
             )
           )}
         </div>
@@ -174,44 +161,22 @@ class Directory extends React.Component {
           <HomeParallax key={id} imageUrl={imageUrl} />
         ))}
         <div className="collection-grid">
-          {this.state.emotionCollections.map(
-            ({ title, price, imageUrl, options, id }) => (
-              <HomepageCollectionList
-                key={id}
-                title={title}
-                price={price}
-                imageUrl={imageUrl}
-                options={options}
-              />
-            )
-          )}
+          {this.state.emotionCollections.map(({ id, ...otherEmotionProps }) => (
+            <HomepageCollectionList key={id} {...otherEmotionProps} />
+          ))}
         </div>
         <div>
           {this.state.happyMugParallax.map(({ imageUrl, id }) => (
             <HomeParallax key={id} imageUrl={imageUrl} />
           ))}
         </div>
-        {this.state.backgroundVideo.map(({ id, title, linkUrl, videoUrl }) => (
-          <BackgroundVideo
-            key={id}
-            title={title}
-            linkUrl={linkUrl}
-            videoUrl={videoUrl}
-          />
+        {this.state.backgroundVideo.map(({ id, ...otherVideoProps }) => (
+          <BackgroundVideo key={id} {...otherVideoProps} />
         ))}
         <div className="grid-section">
-          {this.state.subscribe.map(
-            ({ id, imageUrl, title, subtitle, backgroundColor }) => (
-              <Subscribe
-                id={id}
-                key={id}
-                imageUrl={imageUrl}
-                title={title}
-                subtitle={subtitle}
-                backgroundColor={backgroundColor}
-              />
-            )
-          )}
+          {this.state.subscribe.map(({ id, ...otherSubscribeProps }) => (
+            <Subscribe id={id} {...otherSubscribeProps} />
+          ))}
         </div>
         <div className="collection-grid">
           {this.state.features.map(({ id, icon, title }) => (

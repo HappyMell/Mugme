@@ -1,10 +1,15 @@
 import React from "react";
+import { withRouter } from "react-router-dom";
 import "./background-video.styles.scss";
 
-const BackgroundVideo = ({ id, title, linkUrl, videoUrl }) => (
+const BackgroundVideo = ({ id, title, linkUrl, videoUrl, history, match }) => (
   <div className="background-video">
     <h2 className="title">{title}</h2>
-    <button type="button" className="link-button">
+    <button
+      type="button"
+      className="link-button"
+      onClick={() => history.push(`${match.url}${linkUrl}`)}
+    >
       <div className="link-button__wrapper">
         <img
           className="image-button"
@@ -20,4 +25,4 @@ const BackgroundVideo = ({ id, title, linkUrl, videoUrl }) => (
   </div>
 );
 
-export default BackgroundVideo;
+export default withRouter(BackgroundVideo);
