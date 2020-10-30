@@ -4,188 +4,82 @@ import HomepageCollectionList from "../homepage-collection-list/homepage-collect
 import HomeParallax from "../home-parallax/home-parallax.component";
 import BackgroundVideo from "../background-video/background-video.component";
 import Subscribe from "../subscribe/subscribe.component";
-import TeaCupAnimation from "../../animations/tea-cup.component";
-import BellAnimation from "../../animations/bell-animation.component";
-import BasketAnimation from "../../animations/basket.component";
 import HomeFeatures from "../home-features/home-features.component";
+import { connect } from "react-redux";
+import {
+  selectDirectorySections,
+  selectHomepageSections,
+  selectParallax,
+  selectEmoticonCollections,
+  selectMugParallax,
+  selectBackgroundVideo,
+  selectSubscribe,
+  selectFeatures,
+} from "../../redux/directory/directory.selectors";
+import { createStructuredSelector } from "reselect";
 import "./directory.styles.scss";
 
-class Directory extends React.Component {
-  constructor() {
-    super();
+const Directory = ({
+  sections,
+  homePageSections,
+  selectParallax,
+  emoticonCollections,
+  happyMugParallax,
+  backgroundVideo,
+  subscribe,
+  features,
+}) => (
+  <div className="directory">
+    <div className="grid-section">
+      {sections.map(({ id, ...otherSectionProps }) => (
+        <CardHeroProduct key={id} {...otherSectionProps} />
+      ))}
+    </div>
+    <div className="collection-grid">
+      {homePageSections.map(({ id, ...otherCollectionProps }) => (
+        <HomepageCollectionList key={id} {...otherCollectionProps} />
+      ))}
+    </div>
+    <div>
+      {selectParallax.map(({ imageUrl, id }) => (
+        <HomeParallax key={id} imageUrl={imageUrl} />
+      ))}
+    </div>
+    <div className="collection-grid">
+      {emoticonCollections.map(({ id, ...otherEmotionProps }) => (
+        <HomepageCollectionList key={id} {...otherEmotionProps} />
+      ))}
+    </div>
+    <div>
+      {happyMugParallax.map(({ imageUrl, id }) => (
+        <HomeParallax key={id} imageUrl={imageUrl} />
+      ))}
+    </div>
+    {backgroundVideo.map(({ id, ...otherVideoProps }) => (
+      <BackgroundVideo key={id} {...otherVideoProps} />
+    ))}
+    <div className="grid-section">
+      {subscribe.map(({ id, ...otherSubscribeProps }) => (
+        <Subscribe key={id} {...otherSubscribeProps} />
+      ))}
+    </div>
+    <div className="collection-grid">
+      {features.map(({ id, icon, title }) => (
+        <HomeFeatures key={id} icon={icon} title={title} />
+      ))}
+    </div>
+  </div>
+);
 
-    this.state = {
-      sections: [
-        {
-          title: "me&you",
-          id: 1,
-          backgroundColor: "#ff6464",
-        },
-        {
-          imageUrl:
-            "https://uploads-ssl.webflow.com/5f355e6ddb2cd46fe581b3b4/5f355e6ddb2cd46a6f81b40e_heroimage.jpg",
-          id: 2,
-        },
-      ],
-      homePageCollections: [
-        {
-          id: 1,
-          title: "Pattern Mug",
-          price: "20.00",
-          imageUrl:
-            "https://assets.website-files.com/5f355e6ddb2cd4759981b3ce/5f355e6ddb2cd470a581b4b8_mockup7-p-800.jpeg",
-          options: ["model", "40cl", "36cl"],
-          linkUrl: "shop",
-        },
-        {
-          id: 2,
-          title: "Black & White Mug",
-          price: "20.00",
-          imageUrl:
-            "https://assets.website-files.com/5f355e6ddb2cd4759981b3ce/5f355e6ddb2cd4358281b4b9_mockup8-p-800.jpeg",
-          options: ["model", "40cl", "36cl"],
-          linkUrl: "shop",
-        },
-        {
-          id: 3,
-          title: "Art Mug",
-          price: "20.00",
-          imageUrl:
-            "https://assets.website-files.com/5f355e6ddb2cd4759981b3ce/5f355e6ddb2cd4fff281b4ba_mockup9-p-800.jpeg",
-          options: ["model", "40cl", "36cl"],
-          linkUrl: "shop",
-        },
-      ],
-      homepageParallax: [
-        {
-          id: 1,
-          imageUrl:
-            "https://assets.website-files.com/5f355e6ddb2cd46fe581b3b4/5f355e6ddb2cd482bc81b3ed_parallax1.jpg",
-        },
-      ],
-      emotionCollections: [
-        {
-          id: 1,
-          title: "Happy Mug",
-          price: "20.00",
-          imageUrl:
-            "https://assets.website-files.com/5f355e6ddb2cd4759981b3ce/5f355e6ddb2cd4d65781b4b4_mockup1-p-800.jpeg",
-          options: ["model", "40cl"],
-          linkUrl: "shop",
-        },
-        {
-          id: 2,
-          title: "X Mug",
-          price: "20.00",
-          imageUrl:
-            "https://assets.website-files.com/5f355e6ddb2cd4759981b3ce/5f355e6ddb2cd4e25281b4b5_mockup2-p-800.jpeg",
-          options: ["model", "40cl"],
-          linkUrl: "shop",
-        },
-        {
-          id: 3,
-          title: "Tired Mug",
-          price: "20.00",
-          imageUrl:
-            "https://assets.website-files.com/5f355e6ddb2cd4759981b3ce/5f355e6ddb2cd457f481b4b6_mockup3-p-800.jpeg",
-          options: ["model", "40cl"],
-          linkUrl: "shop",
-        },
-      ],
-      happyMugParallax: [
-        {
-          id: 1,
-          imageUrl:
-            "https://assets.website-files.com/5f355e6ddb2cd46fe581b3b4/5f355e6ddb2cd43eed81b420_parallax2.jpg",
-        },
-      ],
-      backgroundVideo: [
-        {
-          id: 1,
-          title: "Design your mug",
-          linkUrl: "special-product",
-          videoUrl:
-            "https://assets.website-files.com/5f355e6ddb2cd46fe581b3b4/5f355e6ddb2cd4cb5681b41f_ezgif-com-resize-transcode.mp4",
-        },
-      ],
+const mapStateToProps = createStructuredSelector({
+  sections: selectDirectorySections,
+  homePageSections: selectHomepageSections,
+  selectParallax: selectParallax,
+  emoticonCollections: selectEmoticonCollections,
+  happyMugParallax: selectMugParallax,
+  backgroundVideo: selectBackgroundVideo,
+  subscribe: selectSubscribe,
+  features: selectFeatures,
+});
 
-      subscribe: [
-        {
-          id: 1,
-          imageUrl:
-            "https://assets.website-files.com/5f355e6ddb2cd46fe581b3b4/5f355e6ddb2cd4c68481b421_homepageblock1.jpg",
-        },
-        {
-          id: 2,
-          title: "ready?",
-          subtitle: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. ",
-          backgroundColor: "#303030",
-        },
-      ],
-
-      features: [
-        {
-          id: 1,
-          icon: <TeaCupAnimation />,
-          title: "Customize your mug",
-        },
-        {
-          id: 2,
-          icon: <BellAnimation />,
-          title: "Live notification",
-        },
-        {
-          id: 3,
-          icon: <BasketAnimation />,
-          title: "Easy shopping",
-        },
-      ],
-    };
-  }
-  render() {
-    return (
-      <div className="directory">
-        <div className="grid-section">
-          {this.state.sections.map(({ id, ...otherSectionProps }) => (
-            <CardHeroProduct key={id} {...otherSectionProps} />
-          ))}
-        </div>
-        <div className="collection-grid">
-          {this.state.homePageCollections.map(
-            ({ id, ...otherCollectionProps }) => (
-              <HomepageCollectionList key={id} {...otherCollectionProps} />
-            )
-          )}
-        </div>
-        {this.state.homepageParallax.map(({ imageUrl, id }) => (
-          <HomeParallax key={id} imageUrl={imageUrl} />
-        ))}
-        <div className="collection-grid">
-          {this.state.emotionCollections.map(({ id, ...otherEmotionProps }) => (
-            <HomepageCollectionList key={id} {...otherEmotionProps} />
-          ))}
-        </div>
-        <div>
-          {this.state.happyMugParallax.map(({ imageUrl, id }) => (
-            <HomeParallax key={id} imageUrl={imageUrl} />
-          ))}
-        </div>
-        {this.state.backgroundVideo.map(({ id, ...otherVideoProps }) => (
-          <BackgroundVideo key={id} {...otherVideoProps} />
-        ))}
-        <div className="grid-section">
-          {this.state.subscribe.map(({ id, ...otherSubscribeProps }) => (
-            <Subscribe id={id} {...otherSubscribeProps} />
-          ))}
-        </div>
-        <div className="collection-grid">
-          {this.state.features.map(({ id, icon, title }) => (
-            <HomeFeatures key={id} icon={icon} title={title} />
-          ))}
-        </div>
-      </div>
-    );
-  }
-}
-
-export default Directory;
+export default connect(mapStateToProps)(Directory);

@@ -1,0 +1,14 @@
+.collection-item {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  flex-wrap: wrap;
+  flex: 0 0 33%;
+
+  .image {
+    background-size: cover;
+    background-position: 50% 50%;
+    height: 569px;
+    width: 100%;
+  }
+}

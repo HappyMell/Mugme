@@ -1,0 +1,27 @@
+.hero-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 50px;
+  min-height: auto;
+  position: relative;
+  background: #ff6464;
+
+  .title {
+    position: relative;
+    font-family: "Source Sans Pro";
+    font-weight: 700;
+    font-size: 11vw;
+    color: #fff;
+    letter-spacing: -0.035em;
+    margin: unset;
+  }
+}
+
+.items {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+}
