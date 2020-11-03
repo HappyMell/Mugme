@@ -91,7 +91,7 @@ const INITIAL_STATE = {
     {
       id: 1,
       title: "Design your mug",
-      linkUrl: "special-product",
+      linkUrl: "special",
       videoUrl:
         "https://assets.website-files.com/5f355e6ddb2cd46fe581b3b4/5f355e6ddb2cd4cb5681b41f_ezgif-com-resize-transcode.mp4",
     },

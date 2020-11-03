@@ -160,13 +160,15 @@ const SHOP_DATA = [
   {
     id: 3,
     title: "Special Product",
-    routeName: "special-product",
+    routeName: "special",
     items: [
       {
         id: 1,
         name: "Special Mug",
         imageUrl:
           "https://assets.website-files.com/5f355e6ddb2cd4759981b3ce/5f355e6ddb2cd4916d81b4a5_special.jpg",
+        linkUrl: "special",
+        category: "product",
         description:
           "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras malesuada ex id ornare iaculis. Nulla facilisi. Sed luctus suscipit iaculis. Maecenas eleifend, enim in congue accumsan, velit risus accumsan felis, eget tincidunt sapien nunc a ligula. Vivamus vel fermentum dolor. Mauris nec convallis erat. Nam vestibulum quam a lorem ullamcorper, scelerisque imperdiet nulla tincidunt. Fusce nibh arcu, dapibus ac ultricies nec, pretium et quam. Nam ut eros non orci egestas fermentum.",
         price: 30,

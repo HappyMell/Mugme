@@ -2,10 +2,11 @@ import React from "react";
 import { Route } from "react-router-dom";
 import CollectionsOverview from "../../components/collections-overview/collections-overview.component";
 import CategoryPage from "../category/category.component";
+import SpecialProduct from "../special-product/special-product.component";
 import "./graphic.styles.scss";
 
 const GraphicPage = ({ match }) => {
-  // console.log(match.path);
+  console.log(match);
   return (
     <div className="graphic-page">
       <div className="graphic-page__wrapper">

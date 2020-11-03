@@ -4,9 +4,9 @@ import { connect } from "react-redux";
 import { selectCategory } from "../../redux/shop/shop.selectors";
 import "./category.styles.scss";
 
-const CategoryPage = ({ collection }) => {
-  console.log(collection);
+const CategoryPage = ({ collection, match }) => {
   const { title, items } = collection;
+
   return (
     <div className="category">
       <div className="hero-wrapper">
@@ -15,7 +15,7 @@ const CategoryPage = ({ collection }) => {
       </div>
       <div className="items">
         {items.map((item) => (
-          <CollectionItem key={item.id} {...item} />
+          <CollectionItem key={item.id} {...item} match={match} />
         ))}
       </div>
     </div>

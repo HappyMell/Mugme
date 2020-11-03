@@ -3,7 +3,7 @@ import { createSelector } from "reselect";
 const COLLECTION_ID_MAP = {
   graphic: 1,
   emoticon: 2,
-  specialProduct: 3,
+  special: 3,
 };
 
 const selectShop = (state) => state.shop;
