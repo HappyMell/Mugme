@@ -160,7 +160,10 @@ const SHOP_DATA = [
   {
     id: 3,
     title: "Special Product",
-    routeName: "special",
+    routeName: "/special",
+    headerTitle: "your personal mug",
+    image:
+      "https://assets.website-files.com/5f355e6ddb2cd46fe581b3b4/5f355e6ddb2cd472e181b418_blockimage.jpg",
     items: [
       {
         id: 1,
@@ -172,6 +175,73 @@ const SHOP_DATA = [
         description:
           "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras malesuada ex id ornare iaculis. Nulla facilisi. Sed luctus suscipit iaculis. Maecenas eleifend, enim in congue accumsan, velit risus accumsan felis, eget tincidunt sapien nunc a ligula. Vivamus vel fermentum dolor. Mauris nec convallis erat. Nam vestibulum quam a lorem ullamcorper, scelerisque imperdiet nulla tincidunt. Fusce nibh arcu, dapibus ac ultricies nec, pretium et quam. Nam ut eros non orci egestas fermentum.",
         price: 30,
+      },
+    ],
+    overflows: [
+      {
+        id: 1,
+        imageUrl:
+          "https://assets.website-files.com/5f355e6ddb2cd46fe581b3b4/5f355e6ddb2cd418d881b414_special2.jpg",
+      },
+    ],
+    sliders: [
+      {
+        id: 1,
+        imageUrl: "",
+        video:
+          "https://assets.website-files.com/5f355e6ddb2cd46fe581b3b4/5f355e6ddb2cd4789281b429_ezgifcom-gif-to-mp4-transcode.mp4",
+      },
+      {
+        id: 2,
+        imageUrl:
+          "https://assets.website-files.com/5f355e6ddb2cd46fe581b3b4/5f355e6ddb2cd458b181b416_special4-(1).jpg",
+        video: "",
+      },
+    ],
+    gallery: [
+      {
+        id: 1,
+        name: "Salmon",
+        textColor: "#fff",
+        description:
+          "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique. Duis cursus, ",
+        backgroundColor: "#f56466",
+        hoverImage:
+          "https://assets.website-files.com/5f355e6ddb2cd46fe581b3b4/5f355e6ddb2cd4b59181b42a_grafica1.jpg",
+        info: "COLOR OF THE YEAR 2019",
+      },
+      {
+        id: 2,
+        name: "Powder Blue",
+        textColor: "#000",
+        description:
+          "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique. Duis cursus, ",
+        backgroundColor: "#c1e5eb",
+        hoverImage:
+          "https://assets.website-files.com/5f355e6ddb2cd46fe581b3b4/5f355e6ddb2cd4381e81b42b_grafica2.jpg",
+        info: "COLOR OF THE YEAR 2016",
+      },
+      {
+        id: 3,
+        name: "Just Black",
+        textColor: "#fff",
+        description:
+          "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique. Duis cursus, ",
+        backgroundColor: "#000",
+        hoverImage:
+          "https://assets.website-files.com/5f355e6ddb2cd46fe581b3b4/5f355e6ddb2cd4390281b42c_grafica3.jpg",
+        info: "COLOR OF THE YEAR 2018",
+      },
+      {
+        id: 4,
+        name: "Gold",
+        textColor: "#fff",
+        description:
+          "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique. Duis cursus, ",
+        backgroundColor: "#f0cd2a",
+        hoverImage:
+          "https://assets.website-files.com/5f355e6ddb2cd46fe581b3b4/5f355e6ddb2cd429c881b42d_grafica4.jpg",
+        info: "COLOR OF THE YEAR 2018",
       },
     ],
   },

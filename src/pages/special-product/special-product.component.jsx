@@ -1,23 +1,16 @@
 import React from "react";
 import { Route } from "react-router-dom";
-import { selectCategory } from "../../redux/shop/shop.selectors";
-import CollectionsOverview from "../../components/collections-overview/collections-overview.component";
 
-import { connect } from "react-redux";
+import SpecialItem from "../../components/special-item/special-item.component";
 
 import "./special-product.styles.scss";
 
-const SpecialProduct = ({ collection, match }) => {
-  console.log(collection);
+const SpecialProduct = ({ match }) => {
   return (
     <div className="product-of-the-month">
-      <div className="product-container"></div>
+      <Route path={`${match.path}`} component={SpecialItem} />
     </div>
   );
 };
 
-const mapStateToProps = (state, ownProps) => ({
-  collection: selectCategory(ownProps.match.path)(state),
-});
-
-export default connect(mapStateToProps)(SpecialProduct);
+export default SpecialProduct;

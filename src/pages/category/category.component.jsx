@@ -6,7 +6,6 @@ import "./category.styles.scss";
 
 const CategoryPage = ({ collection, match }) => {
   const { title, items } = collection;
-
   return (
     <div className="category">
       <div className="hero-wrapper">

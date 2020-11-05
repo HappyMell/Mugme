@@ -24,3 +24,13 @@ export const selectCategory = (categoryUrlParam) =>
       (collection) => collection.id === COLLECTION_ID_MAP[categoryUrlParam]
     )
   );
+
+export const selectSpecial = (categoryUrlParam) =>
+  createSelector([selectCollections], (collections) =>
+    collections.find((collection) => collection.routeName === categoryUrlParam)
+  );
+
+export const selectItem = (collectionUrlParam) =>
+  createSelector([selectCollections], (collections) =>
+    collections.find((collection) => collection.items)
+  );

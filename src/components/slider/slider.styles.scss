@@ -1,0 +1,32 @@
+.slider-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 850px;
+  overflow: hidden;
+  position: relative;
+
+  video {
+    background-size: cover;
+    background-position: 50% 50%;
+    position: absolute;
+    margin: auto;
+    width: 100%;
+    height: 100%;
+    right: -100%;
+    bottom: -100%;
+    top: -100%;
+    left: -100%;
+    object-fit: cover;
+  }
+
+  img {
+    width: 100%;
+    height: 850px;
+    max-width: 100%;
+    overflow: hidden;
+    object-fit: cover;
+    display: inline-block;
+  }
+}
