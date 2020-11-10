@@ -1,88 +1,82 @@
-.collection-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
-  grid-gap: 16px;
-  margin-top: 20px;
-  .collection-list-wrapper {
-    width: 100%;
+.collection-list-wrapper {
+  width: 100%;
 
-    .card {
-      position: relative;
+  .card {
+    position: relative;
+    display: flex;
+    justify-content: flex-start;
+    flex-direction: column;
+    align-items: center;
+    height: 569px;
+    cursor: pointer;
+
+    .add-to-cart-wrapper {
+      position: absolute;
+      bottom: 0%;
+      left: 0%;
+      right: 0%;
       display: flex;
-      justify-content: flex-start;
-      flex-direction: column;
       align-items: center;
-      height: 569px;
-      cursor: pointer;
+      justify-content: space-between;
+      padding: 20px 15px;
 
-      .add-to-cart-wrapper {
-        position: absolute;
-        bottom: 0%;
-        left: 0%;
-        right: 0%;
+      .price {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        height: 40px;
+        font-family: "Source Sans Pro";
+        font-weight: 600;
+        font-size: 16px;
+        color: #303030;
+      }
+      .buttons-wrapper {
         display: flex;
         align-items: center;
-        justify-content: space-between;
-        padding: 20px 15px;
+        justify-content: flex-start;
 
-        .price {
+        select {
+          display: flex;
+          align-items: stretch;
+          justify-content: space-around;
+          padding: 0 3px;
+          height: 35px;
+        }
+
+        button {
           display: flex;
           flex-direction: column;
           align-items: center;
           justify-content: center;
-          height: 40px;
-          font-family: "Source Sans Pro";
-          font-weight: 600;
-          font-size: 16px;
-          color: #303030;
-        }
-        .buttons-wrapper {
-          display: flex;
-          align-items: center;
-          justify-content: flex-start;
-
-          select {
-            display: flex;
-            align-items: stretch;
-            justify-content: space-around;
-            padding: 0 3px;
-            height: 35px;
-          }
-
-          button {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            padding: 10px;
-            width: 35px;
-            height: 35px;
-            background-color: #303030;
-            border: 2px solid #303030;
-          }
+          padding: 10px;
+          width: 35px;
+          height: 35px;
+          background-color: #303030;
+          border: 2px solid #303030;
         }
       }
+    }
 
-      .title {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        position: absolute;
-        top: 20;
-        left: 20;
-        font-family: "Source Sans Pro";
-        font-weight: 700;
-        font-size: 16px;
-        color: #303030;
-        text-align: left;
-      }
+    .title {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: absolute;
+      top: 20;
+      left: 20;
+      font-family: "Source Sans Pro";
+      font-weight: 700;
+      font-size: 16px;
+      color: #303030;
+      text-align: left;
+    }
 
-      .image {
-        height: 100%;
-        width: 100%;
-        background-size: cover;
-        background-position: center;
-      }
+    .image {
+      height: 100%;
+      width: 100%;
+      background-size: cover;
+      background-position: center;
     }
   }
 }

@@ -1,10 +1,13 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import { connect } from "react-redux";
 import { ReactComponent as Logo } from "../../assets/logo.svg";
-import { ReactComponent as Cart } from "../../assets/cart-icon.svg";
+import CartModal from "../cart-modal/cart-modal.component";
+import CartIcon from "../cart-icon/cart-icon.component";
+
 import "./header.styles.scss";
 
-const Header = () => (
+const Header = ({ hidden }) => (
   <div className="header">
     <div className="header__container">
       <div className="nav-menu">
@@ -30,15 +33,15 @@ const Header = () => (
         <Link to="/about" className="cart-item">
           CONTACT
         </Link>
-        <div className="cart">
-          <div className="cart__button">
-            <Cart className="cart-icon" />
-            <div className="cart-quantity">3</div>
-          </div>
-        </div>
+        <CartIcon />
       </div>
     </div>
+    {hidden ? null : <CartModal />}
   </div>
 );
 
-export default Header;
+const mapStateToProps = ({ cart: { hidden } }) => ({
+  hidden,
+});
+
+export default connect(mapStateToProps)(Header);

@@ -3,6 +3,28 @@ const SHOP_DATA = [
     id: 1,
     title: "Graphic",
     routeName: "graphic",
+    descriptionBottom: [
+      {
+        id: 1,
+        imageUrl:
+          "https://assets.website-files.com/5f355e6ddb2cd4759981b3ce/5f355e6ddb2cd4976c81b4b2_gallery1%20(1).jpg",
+      },
+      {
+        id: 2,
+        imageUrl:
+          "https://assets.website-files.com/5f355e6ddb2cd4759981b3ce/5f355e6ddb2cd40a7281b4b0_gallery2%20(1).jpg",
+      },
+      {
+        id: 3,
+        imageUrl:
+          "https://assets.website-files.com/5f355e6ddb2cd4759981b3ce/5f355e6ddb2cd4f61881b4c0_gallery4-(1)%20(1).jpg",
+      },
+      {
+        id: 4,
+        imageUrl:
+          "https://assets.website-files.com/5f355e6ddb2cd4759981b3ce/5f355e6ddb2cd4344981b4b3_gallery3%20(1).jpg",
+      },
+    ],
     items: [
       {
         id: 1,
@@ -82,6 +104,28 @@ const SHOP_DATA = [
     id: 2,
     title: "Emoticon",
     routeName: "emoticon",
+    descriptionBottom: [
+      {
+        id: 1,
+        imageUrl:
+          "https://assets.website-files.com/5f355e6ddb2cd4759981b3ce/5f355e6ddb2cd4976c81b4b2_gallery1%20(1).jpg",
+      },
+      {
+        id: 2,
+        imageUrl:
+          "https://assets.website-files.com/5f355e6ddb2cd4759981b3ce/5f355e6ddb2cd40a7281b4b0_gallery2%20(1).jpg",
+      },
+      {
+        id: 3,
+        imageUrl:
+          "https://assets.website-files.com/5f355e6ddb2cd4759981b3ce/5f355e6ddb2cd4f61881b4c0_gallery4-(1)%20(1).jpg",
+      },
+      {
+        id: 4,
+        imageUrl:
+          "https://assets.website-files.com/5f355e6ddb2cd4759981b3ce/5f355e6ddb2cd4344981b4b3_gallery3%20(1).jpg",
+      },
+    ],
     items: [
       {
         id: 1,
@@ -162,6 +206,7 @@ const SHOP_DATA = [
     title: "Special Product",
     routeName: "/special",
     headerTitle: "your personal mug",
+
     image:
       "https://assets.website-files.com/5f355e6ddb2cd46fe581b3b4/5f355e6ddb2cd472e181b418_blockimage.jpg",
     items: [

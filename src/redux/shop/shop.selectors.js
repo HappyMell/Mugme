@@ -34,3 +34,8 @@ export const selectItem = (collectionUrlParam) =>
   createSelector([selectCollections], (collections) =>
     collections.find((collection) => collection.items)
   );
+
+export const selectDescription = (collectionUrlParam) =>
+  createSelector([selectCollections], (collections) =>
+    collections.find((collection) => collection.descriptionBottom)
+  );

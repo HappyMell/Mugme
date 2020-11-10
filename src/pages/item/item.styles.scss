@@ -17,4 +17,12 @@
     grid-gap: 16px;
     grid-template-columns: 1fr 1fr;
   }
+
+  .descripton-bottom {
+    min-height: 200px;
+    grid-row-start: span 1;
+    grid-row-end: span 1;
+    grid-column-start: span 2;
+    grid-column-end: span 2;
+  }
 }

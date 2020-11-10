@@ -96,6 +96,72 @@
         height: 1px;
         background-color: #ebebeb;
       }
+
+      .add-to-cart {
+        &__default {
+          margin: 20px 0;
+          min-height: 50px;
+          display: flex;
+
+          .quantity {
+            padding: 8px 6px 8px 12px;
+            height: 50px;
+            width: 60px;
+            font-family: "Raleway";
+            font-weight: 400;
+            font-size: 14px;
+            color: #ff6464;
+            border: 1px solid #ff6464;
+            border-radius: 3px 0 0 3px;
+          }
+
+          .add-to-cart-button {
+            display: flex;
+            align-items: center;
+            justify-content: flex-start;
+            padding: 9px 15px;
+            min-height: 50px;
+            font-family: "Source Sans Pro";
+            font-weight: 400;
+            font-size: 18px;
+            color: #fff;
+            letter-spacing: -0.02;
+            background: #ff6464;
+            border: none;
+            border-radius: 0 3px 3px 0;
+          }
+        }
+      }
     }
   }
+}
+
+.related-products {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 30px;
+  grid-row-start: span 1;
+  grid-row-end: span 1;
+  grid-column-start: span 2;
+  grid-column-end: span 2;
+
+  p {
+    font-family: "Source Sans Pro";
+    font-size: 22px;
+    color: #333;
+  }
+}
+
+.homepage-collection {
+  grid-row-start: span 1;
+  grid-row-end: span 1;
+  grid-column-start: span 2;
+  grid-column-end: span 2;
+  width: 100%;
+  display: grid;
+  grid-auto-columns: 1fr;
+  grid-column-gap: 16px;
+  grid-template-columns: 1fr 1fr 1fr;
 }

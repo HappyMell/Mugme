@@ -1,4 +1,5 @@
 import React from "react";
+import "../../styles/global-styles.scss";
 import "./homepage-collection-list.styles.scss";
 
 const HomepageCollectionList = ({ price, title, imageUrl, options }) => (
