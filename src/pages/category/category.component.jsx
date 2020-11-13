@@ -14,7 +14,7 @@ const CategoryPage = ({ collection, match }) => {
       </div>
       <div className="items">
         {items.map((item) => (
-          <CollectionItem key={item.id} {...item} match={match} />
+          <CollectionItem key={item.id} item={item} match={match} />
         ))}
       </div>
     </div>

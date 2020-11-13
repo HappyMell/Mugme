@@ -7,7 +7,7 @@ const ShopDescription = ({ descriptionBottom, match }) => {
     <div className="description-wrapper-container">
       <div className="description-list">
         {descriptionBottom.map((description) => (
-          <div className="item">
+          <div className="item" key={description.id}>
             <img src={description.imageUrl} alt="mug " />
           </div>
         ))}

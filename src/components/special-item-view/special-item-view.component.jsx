@@ -17,12 +17,6 @@ const SpecialItemView = ({ item }) => (
           <div className="separator" />
           <div className="add-to-cart">
             <div className="add-to-cart__default">
-              <input
-                className="quantity"
-                type="number"
-                inputMode="numeric"
-                min="1"
-              />
               <button type="button" className="add-to-cart-button">
                 Add to Cart
               </button>

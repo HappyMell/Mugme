@@ -28,6 +28,7 @@ const Directory = ({
   backgroundVideo,
   subscribe,
   features,
+  match,
 }) => (
   <div className="directory">
     <div className="grid-section">
@@ -37,7 +38,11 @@ const Directory = ({
     </div>
     <div className="collection-grid">
       {homePageSections.map(({ id, ...otherCollectionProps }) => (
-        <HomepageCollectionList key={id} {...otherCollectionProps} />
+        <HomepageCollectionList
+          key={id}
+          {...otherCollectionProps}
+          match={match}
+        />
       ))}
     </div>
     <div>
@@ -47,7 +52,7 @@ const Directory = ({
     </div>
     <div className="collection-grid">
       {emoticonCollections.map(({ id, ...otherEmotionProps }) => (
-        <HomepageCollectionList key={id} {...otherEmotionProps} />
+        <HomepageCollectionList key={id} {...otherEmotionProps} match={match} />
       ))}
     </div>
     <div>

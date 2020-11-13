@@ -4,15 +4,23 @@ import { createStructuredSelector } from "reselect";
 import ShopDescription from "../shop-description/shop-description.component";
 import HomepageCollectionList from "../homepage-collection-list/homepage-collection-list.component";
 import HomeFeatures from "../home-features/home-features.component";
+import { addItem } from "../../redux/cart/cart.actions";
+
 import "./item-info.styles.scss";
 import {
   selectHomepageSections,
   selectFeatures,
 } from "../../redux/directory/directory.selectors";
 
-const ItemInfo = ({ item, descriptionBottom, homePageSections, features }) => {
-  console.log(descriptionBottom);
-  const { imageUrl, price, name, description, options } = item;
+const ItemInfo = ({
+  item,
+  descriptionBottom,
+  homePageSections,
+  features,
+  addItem,
+  match,
+}) => {
+  const { imageUrl, price, name, description } = item;
   return (
     <div className="item-profile-view__container">
       <div className="slider-container">
@@ -27,25 +35,13 @@ const ItemInfo = ({ item, descriptionBottom, homePageSections, features }) => {
           <p className="description">{description}</p>
           <div className="separator" />
           <div className="add-to-cart">
-            <div className="size-wrapper">
-              <select className="option-list">
-                {options.map((option, id) => (
-                  <option className="option" key={id}>
-                    {option}
-                  </option>
-                ))}
-              </select>
-            </div>
-            <div className="separator" />
             <div className="add-to-cart">
               <div className="add-to-cart__default">
-                <input
-                  className="quantity"
-                  type="number"
-                  inputMode="numeric"
-                  min="1"
-                />
-                <button type="button" className="add-to-cart-button">
+                <button
+                  type="button"
+                  className="add-to-cart-button"
+                  onClick={() => addItem(item)}
+                >
                   Add to Cart
                 </button>
               </div>
@@ -61,7 +57,11 @@ const ItemInfo = ({ item, descriptionBottom, homePageSections, features }) => {
       </div>
       <div className="homepage-collection">
         {homePageSections.map(({ id, ...otherCollectionProps }) => (
-          <HomepageCollectionList key={id} {...otherCollectionProps} />
+          <HomepageCollectionList
+            key={id}
+            {...otherCollectionProps}
+            match={match}
+          />
         ))}
       </div>
       <div className="homepage-collection">
@@ -78,4 +78,8 @@ const mapStateToProps = createStructuredSelector({
   features: selectFeatures,
 });
 
-export default connect(mapStateToProps)(ItemInfo);
+const mapDispatchToProps = (dispatch) => ({
+  addItem: (item) => dispatch(addItem(item)),
+});
+
+export default connect(mapStateToProps, mapDispatchToProps)(ItemInfo);

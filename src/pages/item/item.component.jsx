@@ -17,6 +17,7 @@ const ItemPage = ({ items, match }) => {
             key={item.id}
             item={item}
             descriptionBottom={descriptionBottom}
+            match={match}
           />
         ))}
     </div>

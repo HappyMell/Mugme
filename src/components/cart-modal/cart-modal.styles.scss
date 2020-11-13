@@ -12,6 +12,7 @@
   right: 0px;
   bottom: 0px;
   background-color: rgba(0, 0, 0, 0.8);
+  z-index: 500;
 
   .cart-container {
     display: flex;
@@ -52,6 +53,10 @@
       justify-content: flex-start;
 
       .default-state {
+        .cart-list {
+          padding: 12px 24px;
+          max-height: 360px;
+        }
         .cart-footer {
           display: flex;
           flex-direction: column;

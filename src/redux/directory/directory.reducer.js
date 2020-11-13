@@ -23,7 +23,7 @@ const INITIAL_STATE = {
       imageUrl:
         "https://assets.website-files.com/5f355e6ddb2cd4759981b3ce/5f355e6ddb2cd470a581b4b8_mockup7-p-800.jpeg",
       options: ["model", "40cl", "36cl"],
-      linkUrl: "shop",
+      linkUrl: "category/graphic/pattern-mug",
     },
     {
       id: 2,
@@ -32,7 +32,7 @@ const INITIAL_STATE = {
       imageUrl:
         "https://assets.website-files.com/5f355e6ddb2cd4759981b3ce/5f355e6ddb2cd4358281b4b9_mockup8-p-800.jpeg",
       options: ["model", "40cl", "36cl"],
-      linkUrl: "shop",
+      linkUrl: "category/graphic/black-and-white-mug",
     },
     {
       id: 3,
@@ -41,7 +41,7 @@ const INITIAL_STATE = {
       imageUrl:
         "https://assets.website-files.com/5f355e6ddb2cd4759981b3ce/5f355e6ddb2cd4fff281b4ba_mockup9-p-800.jpeg",
       options: ["model", "40cl", "36cl"],
-      linkUrl: "shop",
+      linkUrl: "category/graphic/art-mug",
     },
   ],
   homepageParallax: [
@@ -59,7 +59,7 @@ const INITIAL_STATE = {
       imageUrl:
         "https://assets.website-files.com/5f355e6ddb2cd4759981b3ce/5f355e6ddb2cd4d65781b4b4_mockup1-p-800.jpeg",
       options: ["model", "40cl"],
-      linkUrl: "shop",
+      linkUrl: "category/emoticon/happy-mug",
     },
     {
       id: 2,
@@ -68,7 +68,7 @@ const INITIAL_STATE = {
       imageUrl:
         "https://assets.website-files.com/5f355e6ddb2cd4759981b3ce/5f355e6ddb2cd4e25281b4b5_mockup2-p-800.jpeg",
       options: ["model", "40cl"],
-      linkUrl: "shop",
+      linkUrl: "category/emoticon/x-mug",
     },
     {
       id: 3,
@@ -77,7 +77,7 @@ const INITIAL_STATE = {
       imageUrl:
         "https://assets.website-files.com/5f355e6ddb2cd4759981b3ce/5f355e6ddb2cd457f481b4b6_mockup3-p-800.jpeg",
       options: ["model", "40cl"],
-      linkUrl: "shop",
+      linkUrl: "category/emoticon/tired-mug",
     },
   ],
   happyMugParallax: [
